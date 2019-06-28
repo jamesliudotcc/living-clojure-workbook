@@ -3,13 +3,15 @@
            "too big"
            "is swimming"])
 
-(defn alice-is [in out] ; pass in a vector to alice-is
-  (if (empty? in) ; like js ternary, delimited by spaces: is in empty?
-    out ; base case, returns out
-    (alice-is ; recursive case
-     (rest in)
-     (conj out
-           (str "Alice is " (first in)))))) ; like head/tail, here, we haven't
-           ; it's still the orignal vector, so first is correct.
+(defn alice-is [input] ; instead of a vector, just the input
+  (loop [in input ; recur jumps here
+         out []] ; still need to define inital of acc
+    (if (empty? in)
+      out ; return
+      (recur (rest in)
+             (conj out
+                   (str "Alice is a  ") (first in)))))
 
-(alice-is adjs []) ; [] is the initial condition of out, empty vector
+(alice-is adjs) ; no need to add accumulator
+
+; come back here, not totally understood
