@@ -14,4 +14,4 @@
 
 (alice-is adjs) ; no need to add accumulator
 
-; come back here, not totally understood
+; TODO come back here, not totally understood
